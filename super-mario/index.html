@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First WebVR Game</title>
+    <meta
+      name="description"
+      content="My first WebVR Game..."
+    />
+    <link rel="icon" href="mashroom.png">
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+ </head>
+ <body>
+   <a-scene>
+     <a-camera>
+      <a-entity gltf-model="./models/star/star_01.gltf" position="-3.2 1.85 -3" scale="0.002 0.002 0.002" rotation="270 180 270"></a-entity>
+      <a-text id="score" value="Score: 0" position="-3 2 -3"></a-text> 
+      <a-cursor></a-cursor>
+     </a-camera>
+     <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+     <a-entity id="surprise" position="0 0 -4" rotation="10 0 0"></a-entity>
+   </a-scene>
+
+   <a-entity id="pipe" gltf-model="./models/pipe/pipe.gltf" position="0 1 -3" scale="0.1 0.1 0.1"></a-entity>
+   <a-entity id="coin" gltf-model="./models/coin/scene.gltf" position="4 3 -5" scale="0.05 0.05 0.05" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 2000"></a-entity>
+   <a-entity id="heart" gltf-model="./models/heart/Heart.gltf" position="0 2 -4" rotation="30 -10 0" scale="0.003 0.003 0.003" animation="easing: linear; property: position; to: 0 10 -4; dur: 2000"></a-entity>
+   <script src="game.js"></script>
+ </body>
+</html>
